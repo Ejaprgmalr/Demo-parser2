@@ -1,0 +1,83 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 4a1bed8b2282f33c1344d86ae2cd112983f7306fd43147b9a6aa6735aadc72e7
+
+name:           configuraptor
+version:        0.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Absyn
+      Parser
+      Elaborator
+      Solver
+  other-modules:
+      ElaboratorImpl
+      Main
+      ParserImpl
+      ParserImpl_backup
+      SolverImpl
+      Test
+      Utils
+      Paths_configuraptor
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+    , bytestring
+    , containers
+    , mtl
+    , parsec
+    , text
+  default-language: Haskell2010
+
+executable configuraptor
+  main-is: Main.hs
+  other-modules:
+      Absyn
+      Elaborator
+      ElaboratorImpl
+      Parser
+      ParserImpl
+      ParserImpl_backup
+      Solver
+      SolverImpl
+      Test
+      Utils
+      Paths_configuraptor
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+    , bytestring
+    , containers
+    , mtl
+    , parsec
+    , text
+  default-language: Haskell2010
+
+test-suite my-test-suite
+  type: exitcode-stdio-1.0
+  main-is: Test.hs
+  other-modules:
+      Paths_configuraptor
+  hs-source-dirs:
+      tests
+  build-depends:
+      QuickCheck
+    , base
+    , bytestring
+    , configuraptor
+    , containers
+    , mtl
+    , parsec
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
+    , text
+  default-language: Haskell2010
